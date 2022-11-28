@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
+import {BrowserRouter as Router,Routes,Route, Link} from 'react-router-dom'
+import { Home } from './Pages/Home/Home'
+import { Product } from './Pages/Product/Product'
+import { Products } from './Pages/Products/Products'
+const FourOFour = ()=>{
+  return(
+    <div>
+    <h1>Sorry Page no foound...</h1>
+    <Link to={'/'} >Home</Link></div>
+  )
+}
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>Navigation Bar</div>
+      <Routes>
+        <Route element={<FourOFour />} path="*" />
+        <Route element={<Home />} path="/" />
+        <Route element={<Products />} path="/products" />
+        <Route element={<Product />} path="/product/:id" />
+      </Routes>
+      <div>Footer Section Bar</div>
+    </Router>
   );
 }
 

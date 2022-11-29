@@ -1,4 +1,6 @@
 import {BrowserRouter as Router,Routes,Route, Link} from 'react-router-dom'
+import { Footer } from './Components/Footer/Footer'
+import { Navbar } from './Components/NavBar/Navbar'
 import { Home } from './Pages/Home/Home'
 import { Product } from './Pages/Product/Product'
 import { Products } from './Pages/Products/Products'
@@ -12,14 +14,14 @@ const FourOFour = ()=>{
 function App() {
   return (
     <Router>
-      <div>Navigation Bar</div>
+      <Navbar/>
       <Routes>
         <Route element={<FourOFour />} path="*" />
         <Route element={<Home />} path="/" />
         <Route element={<Products />} path="/products" />
         <Route element={<Product />} path="/product/:id" />
       </Routes>
-      <div>Footer Section Bar</div>
+      <Footer />
     </Router>
   );
 }
